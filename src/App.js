@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Button from "./components/Button";
 
 function App() {
+
+  const skills = ["HTML", "CSS", "JavaScript", "React"];
+
+  const projects = [
+    { nome: "Site Pessoal", desc: "Meu portfólio" },
+    { nome: "Lista de Tarefas", desc: "App simples" }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header nome="Charlene Costa" titulo="Desenvolvedora Frontend" />
+
+      <About
+        descricao="Desenvolvedora iniciante apaixonada por tecnologia."
+        area="Desenvolvimento Web"
+      />
+
+      <Skills skills={skills} />
+
+      <Projects projects={projects} />
+
+      <div className="p-4">
+        <Button />
+      </div>
     </div>
   );
 }
